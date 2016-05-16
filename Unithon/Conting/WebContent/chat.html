@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #header {
+            background-color: #ffffff;
+            color: #fffff;
+            text-align: center;
+            padding: 5px;
+        }
+
+
+        #section {
+            width: 2000px;
+            height: 1000px;
+            float: left;
+            padding: 10px;
+        }
+
+        #footer {
+            background-color: lightgray;
+            color: white;
+            clear: both;
+            text-align: center;
+            padding: 5px;
+        }
+
+        * {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #sidebar {
+            width: 200px;
+            height: inherit;
+            float: left;
+            background-color: white;
+            border: 1px solid #e5e5e5;
+        }
+
+        #primary {
+            margin-left: 200px;
+            height: inherit;
+            border: 1px solid #e5e5e5;
+        }
+
+        #notice {
+            height: 5%;
+            background-color: white;
+            border: 1px solid #e5e5e5;
+            font-family: THELuxGoM;
+            color: #a7a7a7;
+        }
+
+        #log {
+            height: 85%;
+            background-color: white;
+            overflow: auto;
+        }
+
+        #composer {
+            height: 10%;
+            background-color: white;
+        }
+
+        #notice, #composer, #log {
+            padding: 20px;
+        }
+
+        .button {
+            width: 10%;
+        }
+
+        textarea {
+            width: 90%;
+            height: 100%;
+            border: 4px solid #e5e5e5;
+            border-radius: 15px;
+        }
+
+        .button, textarea {
+            padding: 10px;
+        }
+        <!-- -메세지-- > #log .message {
+            display: flex;
+            margin: 10px 0 0 10px;
+            min-height: 30px;
+            height: auto;
+            text-align: left;
+            font-family: THELuxGoM;
+        }
+
+
+        #log .message.me div {
+            order: 1;
+            padding: 0 8px 0 0;
+        }
+
+            #log .message.me div p {
+                float: right;
+            }
+
+            #log .message.me div:before {
+                position: relative;
+                float: right;
+                content: '';
+                margin: 7px -8px 0 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 8px 0 8px 8px;
+                border-color: transparent transparent transparent #e4ecbf;
+                font-family: THELuxGoM;
+            }
+
+
+        #log .message div {
+            display: block;
+            flex: 1;
+            order: 2;
+        }
+
+            #log .message div p {
+                display: inline-block;
+                margin: 0;
+                width: auto;
+                padding: 8px 10px 8px 10px;
+                background: #e4ecbf;
+                word-wrap: break-word;
+                font-family: Monospace;
+                border-radius: 3px;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                font-family: THELuxGoM;
+            }
+
+            #log .message div:before {
+                position: relative;
+                float: left;
+                content: '';
+                margin: 7px 0 0 -8px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 8px 8px 8px 0;
+                border-color: transparent #e4ecbf transparent transparent;
+                font-family: THELuxGoM;
+            }
+
+
+        <!-- -로그-- > .long-content {
+            height: 3000px;
+            display: block;
+        }
+        <!-- -왼쪽 상단-- > .picture {
+            font-family: THELuxGoM;
+            padding-top: 20px;
+            width: 200px;
+            height: 500px;
+            background: #f5f5f5;
+        }
+
+        .picture .title {
+            width: 200px;
+            height: 100px;
+            background: #f5f5f5;
+        }
+
+        .picture.time {
+            width: 200px;
+            height: 100px;
+            background: #f5f5f5;
+        }
+
+        .picture.people {
+            width: 200px;
+            height: 100px;
+            background: #f5f5f5;
+        }
+
+        <!-- 왼쪽 하단-- > .wrapper {
+            width: 200px;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            background: white;
+        }
+
+        .wrapper .card0 {
+            float: left;
+            width: 199px;
+            height: 50px;
+            background: white;
+            border: 1px solid #f1f1f1;
+            text-align: center;
+            vertical-align: middle;
+            font-family: THELuxGoM;
+            color: #118cb1;
+        }
+
+        .wrapper .card1 {
+            float: left;
+            width: 199px;
+            height: 60px;
+            background: white;
+            border: 1px solid #f1f1f1;
+            text-align: center;
+            vertical-align: middle;
+            font-family: THELuxGoM;
+            color: #a7a7a7;
+        }
+    </style>
+
+    <!---ㅇㅣ 부분은 스크롤이에요-->
+    <style type="text/css">
+        body {
+            scrollbar-face-color: #ffffff;
+            scrollbar-shadow-color: #999999;
+            scrollbar-highlight-color: #999999;
+            scrollbar-3dlight-color: #ffffff;
+            scrollbar-darkshadow-color: #ffffff;
+            scrollbar-track-color: #ffffff;
+            scrollbar-arrow-color: #999999;
+        }
+
+        @font-face {
+            font-family: THELuxGoM;
+        }
+
+        p {
+            font-family: THELuxGoM;
+            color: gray;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="header">
+        <h3>맨 위에 로고 메뉴등등</h3>
+    </div>
+
+    <div id="section">
+        <div id="sidebar">
+            <div class="picture">
+                <div class="whole">
+
+                    <div class="category">
+                        <img src="http://imgur.com/Tlnobir.jpg" style="margin:0 auto; padding-left:25px; padding-right:5px;" width="180" height="150">
+                    </div>
+
+                    <div class="title" style="text-align:center">
+                        <h5>이곳에 방제목이 들어갑니다</h5>
+                    </div>
+
+                    <div class="time">
+                        <img src="http://imgur.com/blBzZwk.jpg" align="left" style="padding-left:15px; padding-right:5px" width="40" height="20">
+                        <h4>만나는 시간</h4>
+                    </div>
+
+                    <div class="people">
+                        <img src="http://imgur.com/wfhjHJd.jpg" align="left" style="padding-left:15px; padding-right: 5px;" width="40" height="20">
+                        <h4>인원</h4>
+                    </div>
+
+                </div>
+                <div class="wrapper">
+                    <div class="card0">
+                        <h3>참가자 목록</h3>
+                    </div>
+                    <div class="card1">
+                        <h4>나</h4>
+                    </div>
+                    <div class="card1">
+                        <h4>너</h4>
+                    </div>
+                    <div class="card1">
+                        <h4>우리</h4>
+                    </div>
+                    <div class="card1">
+                        <h4>해슬</h4>
+                    </div>
+
+                    <div class="card1">
+                        <h4>이어폰</h4>
+                    </div>
+
+                    <div class="card1">
+                        <h4>우왕</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="primary">
+            <div id="notice">
+                <div>
+                    공지
+                    <img src="http://imgur.com/PNs2ZtG.jpg" style="margin:0 auto; " width="20" height="20">
+                </div>
+            </div>
+            <div id="log">
+                <div class="long-content">
+                    <div id="message inf">
+                        <div><p>신사장</p></div>
+                    </div>
+                    <div class="message">
+                        <div><p>아이고 이사장</p></div>
+                    </div>
+                    <div class="message me">
+                        <div><p>아이고 신사장</p></div>
+                    </div>
+                    <div id="message inf">
+                        <div><p>신사장</p></div>
+                    </div>
+                    <div class="message">
+                        <div>
+                            <p>
+                                이거 정말 반갑구만 반가워요
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="composer">
+                <textarea></textarea>
+                <div class="button">
+                    <src img="http://imgur.com/PNs2ZtG.jpg" width="100" height="100">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

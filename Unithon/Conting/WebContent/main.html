@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Conting</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-clockpicker.min.css" rel="stylesheet">
+    <link href="css/jquery-clockpicker.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <style type="text/css">
+    .room_number {
+        font-family: THELuxGoL;
+        margin: 10px 0 0 0;
+    }
+
+    .title {
+        font-family: THELuxGoB;
+    }
+
+    .time {
+        font-family: THELuxGoL;
+    }
+
+    .people {
+        font-family: THELuxGoL;
+    }
+
+    .card{
+        border-style:solid;
+        border-radius:10px;
+        border-color:#F0F0F0;
+        border-width:2px;
+        margin-left: 35px;
+        margin-bottom: 10px;
+    }
+    .card:hover{
+        cursor: pointer;
+    }
+
+    .type{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid #F0F0F0;
+    }
+    .label-image{
+        vertical-align: middle;
+        max-height: 20px;
+    }
+    .logo{
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .conference-cover {
+        height: 400px;
+        background: url('images/deview2014.jpg') center center no-repeat scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: 100;
+        font-size: 50px;
+        line-height: 400px;
+    }
+    #createRoomCard{
+        height:270px;
+    }
+    .plus{
+        margin-top: 40px;
+        padding: 30px;
+    }
+</style>
+</head>
+<body>
+    <div class="nav">
+        <img src="images/logo.png" alt="로고" class="center-block logo"/>
+    </div>
+
+    <div class="conference-cover">
+        Naver Deview 2014 - 09.29 MON ~ 09.30 TUE
+    </div>
+
+    <div class="neighborhood-guides">
+        <div class="container">
+            <p></p>
+            <div class="" style="margin:0 auto; width:300px;">
+                <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+                    <button class="btn btn-default btn-width" type="button" name="전체">전체</button>
+                    <button class="btn btn-default btn-width" type="button" name="카페">카페</button>
+                    <button class="btn btn-default btn-width" type="button" name="식사">식사</button>
+                    <button class="btn btn-default btn-width" type="button" name="술">술</button>
+                </div>
+            </div>
+            <p></p>
+            <p></p>
+            <div id="roomList" class="row">
+
+                <div class="col-md-2 card" id="createRoomCard">
+                    <div class="whole">
+                        <div class="room_number" style="padding-left:5px; padding-bottom:0px; color:#989898;">
+                        </div>
+                        <div class="category">
+                            <img src="images/plus.png" class="img-circle type plus" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 card">
+                    <div class="whole">
+                        <div class="room_number" style="padding-left:5px; padding-bottom:0px; color:#989898;">
+                            <p>01</p>
+                        </div>
+                        <div class="category">
+                            <img src="images/beer.png" class="img-circle type enter" />
+                        </div>
+                        <div class="title" style="text-align:center; color:#505050">
+                            <h3>같이 밥 먹어요!</h3>
+                        </div>
+                        <div class="time" style="color:#A0A0A0">
+                            <p><img src="images/timer.png" align="left" class="label-image">PM 18:00 ~ 20:00</p>
+                        </div>
+                        <div class="people" style="color:#A0A0A0">
+                            <p><img src="images/capacity.png" align="left" class="label-image">4 /5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 card">
+                    <div class="whole">
+                        <div class="room_number" style="padding-left:5px; padding-bottom:0px; color:#989898;">
+                            <p>02</p>
+                        </div>
+                        <div class="category">
+                            <img src="images/beer.png" class="img-circle type enter" />
+                        </div>
+                        <div class="title" style="text-align:center; color:#505050">
+                            <h3>같이 밥 먹어요!</h3>
+                        </div>
+                        <div class="time" style="color:#A0A0A0">
+                            <p><img src="images/timer.png" align="left" class="label-image">PM 18:00 ~ 20:00</p>
+                        </div>
+                        <div class="people" style="color:#A0A0A0">
+                            <p><img src="images/capacity.png" align="left" class="label-image">4 /5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="usernameFormModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Username</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="username" placeholder="Joe">
+                </div>
+                <div class="modal-footer">
+                    <button id="usernameBtn" type="button" class="btn btn-primary">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="createRoomModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">방 만들기</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="title">방 제목</label>
+                            <input type="text" class="form-control" id="roomTitle" placeholder="Meteor 프레임워크에 관심 있으신 분~"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="purpose">목적</label>
+                            <div class="container-fluid">
+                                <label class="radio-inline"><input type="radio" name="purpose1" data-purpose="0">식사</label>
+                                <label class="radio-inline"><input type="radio" name="purpose1" data-purpose="1">술자리</label>
+                                <label class="radio-inline"><input type="radio" name="purpose1" data-purpose="2">커피</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="times">모임 시작 시간</label>
+                            <div class="input-group begin-clockpicker">
+                                <input id="beginTime" type="text" class="form-control" value="00:00">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-time"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="times">모임 종료 시간</label>
+                            <div class="input-group begin-clockpicker">
+                                <input id="endTime" type="text" class="form-control" value="00:00">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-time"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="purpose">인원</label>
+                            <div class="container-fluid">
+                                <label class="radio-inline"><input type="radio" name="capacity" value="2">2명</label>
+                                <label class="radio-inline"><input type="radio" name="capacity" value="4">4명</label>
+                                <label class="radio-inline"><input type="radio" name="capacity" value="8">8명</label>
+                            </div>
+                        </div>
+                        <input id="createRoomBtn" type="submit" class="btn btn-default" value="개설하기"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p></p>
+    <footer style="height:100px;">
+        <div class="jumbotron">
+            <div class="container" style="text-align:center">
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script id="card-template" type="text/x-handlebars-template">
+    <div class="col-md-2 card" id="createRoomCard">
+        <div class="whole">
+            <div class="room_number" style="padding-left:5px; padding-bottom:0px; color:#989898;">
+            </div>
+            <div class="category">
+                <img src="images/plus.png" class="img-circle type plus" />
+            </div>
+        </div>
+    </div>
+    {{#each roomList}}
+        <div class="col-md-2 card">
+            <div class="whole">
+                <div class="room_number" style="padding-left:5px; padding-bottom:0px; color:#989898;">
+                    <p>{{num}}</p>
+                </div>
+                <div class="category">
+                    <img src="images/{{purpose}}" class="img-circle type enter" />
+                </div>
+                <div class="title" style="text-align:center; color:#505050">
+                    <h3>{{title}}</h3>
+                </div>
+                <div class="time" style="color:#A0A0A0">
+                    <p><img src="images/timer.png" align="left" class="label-image">{{beginTime}} ~ {{endTime}}</p>
+                </div>
+                <div class="people" style="color:#A0A0A0">
+                    <p><img src="images/capacity.png" align="left" class="label-image">4 /{{capacity}}</p>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-clockpicker.min.js"></script>
+<script src="js/jquery-clockpicker.min.js"></script>
+<script src="js/handlebars-v4.0.5.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/require.js"></script>
+<script src="js/main.js"></script>
+
+</html>
